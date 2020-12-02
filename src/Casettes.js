@@ -13,7 +13,7 @@ import './App.css';
 class Cassettes extends Component {
     constructor(){
         super()
-        // Create an array of images
+        // Create an array of the cassette tape images
         this.state = {
             tapeImages: [
                 {
@@ -48,9 +48,12 @@ class Cassettes extends Component {
                 }
             ],
             mixName:"Awesome Mix Vol. 1",
+            // counter that increases/decreases with button click. Used to reference the images on the array
             count: 0,
         }
     }
+
+    // Event handlers for the button click that advances to the next tape or goes back to the previous one
 
         prevCassette = (e) => {
             if (this.state.count > 0) {
@@ -74,11 +77,18 @@ class Cassettes extends Component {
         return (
             <div className="cassette">
                 <p class="tapeName">{this.state.mixName}</p>
+
                 <img className="cassetteTape" src={this.state.tapeImages[this.state.count].src} alt={this.state.tapeImages[this.state.count].alt}/>
+
+                {/* button to cycle through different cassette images in the array */}
                 <div className="buttonFlex">
-                <button onClick={this.prevCassette}><img src={leftArrow} alt=""/></button>
+
+                <button className="tapeButton" onClick={this.prevCassette}><img src={leftArrow} alt="left pointing arrow, click to select the previous cassette"/></button>
+
                 <p>Choose Your Tape!</p>
-                <button onClick={this.nextCassette}><img src={rightArrow} alt=""/></button>
+
+                <button className="tapeButton" onClick={this.nextCassette}><img src={rightArrow} alt="right pointing arrow, click to select the next cassette"/></button>
+
                 </div>
             </div>
         )

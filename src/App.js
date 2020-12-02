@@ -2,6 +2,7 @@ import { Component } from 'react';
 import './App.css';
 import Cassettes from './Casettes';
 import Header  from './Header.js';
+import MixNameForm from './MixNameForm';
 import Playlist from './Playlist';
 
 class App extends Component {
@@ -18,6 +19,7 @@ class App extends Component {
         < Playlist />
         </div>
         </div>
+        <MixNameForm />
         </main>
 
       </div>
