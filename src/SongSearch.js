@@ -5,7 +5,7 @@ const SongSearch = (props) => {
     const { songArtist, songValue, setSongValue, saveSongValue } = props
 
     return (
-        <div className="stepTwo">
+        <div className="songFormContainer">
             <h2>Search for Songs!</h2>
 
             <form

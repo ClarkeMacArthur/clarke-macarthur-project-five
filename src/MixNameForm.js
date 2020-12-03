@@ -5,7 +5,7 @@ const MixNameForm = (props) => {
     const { nameValue, setNameValue, saveNameValue } = props
         
     return (
-            <div className="stepOne">
+            <div className="nameFormContainer">
                 <h2>Name your mix!</h2>
     
                 <form 
@@ -19,6 +19,7 @@ const MixNameForm = (props) => {
                         <input 
                         type="text"
                         id="getName"
+                        maxLength = "20"
                         placeholder="ex. Awesome Mix Vol. 1"
                         onChange={setNameValue}
                         value={nameValue} />

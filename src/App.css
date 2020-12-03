@@ -33,9 +33,7 @@ img {
 
 @import url('https://fonts.googleapis.com/css2?family=Major+Mono+Display&family=Montserrat:wght@400;500;600;700&family=Permanent+Marker&family=Roboto+Mono:wght@400;500;700&display=swap');
 
-.App {
-  text-align: center;
-}
+
 
 header{
   /* background-color: rgb(212, 192, 163); */
@@ -54,11 +52,13 @@ h1 {
   font-family: 'Major Mono Display', monospace;
   font-size: 10rem;
   text-shadow: 2px 2px 2px #FF1A0E, 4px 4px 2px #E78C0D, 5px 5px 2px #E7C711, 8px 8px 2px #4DB913, 10px 10px 2px #0EC5DD, 14px 14px 2px #139DDD;
+  text-align: center;
 }
 
 .playlist {
   display: flex;
   justify-content: center;
+  position:relative;
 }
 
 .cassettePlaylist {
@@ -87,6 +87,10 @@ img {
   width: 70%;
 }
 
+button {
+  cursor: pointer;
+}
+
 .buttonFlex {
   display: flex;
   justify-content: center;
@@ -111,14 +115,15 @@ img {
   min-width: 70px;
 }
 
-.stepOne {
-  margin-top: 8%;
+.nameFormContainer, .songFormContainer {
+  margin: 8% 0;
 }
 
-h2  {
+.nameFormContainer h2, .songFormContainer h2 {
   font-family: 'Permanent Marker', cursive;
   font-size: 3rem;
   margin-bottom: 40px;
+  text-align: center;
 }
 
 .nameForm, .songForm {
@@ -154,19 +159,57 @@ input {
 }
 
 
-
-
 .trackCard {
   border: 2px solid rgb(90, 90, 90);
 }
 
+ul {
+  list-style: none;
+  width: 90%;
+}
+
+.songListContainer {
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  width: 69%;
+  position: absolute;
+  z-index:10;
+  top:45px;
+  left:110px;
+}
 
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.songList2 {
+/* margin-left:-8%; */
+} 
+
+.songListContainer p {
+  font-size: 1.6rem;
+  line-height:1.5;
+}
+
+.results {
+  background-color: wheat;
+  margin: 50px;
+  padding: 50px;
+  display: flex;
+  justify-content: center;
+  font-size: 1.8rem;
+  font-weight: 600;
+  border-radius: 25px;;
+}
+
+.results p {
+  margin-right: 30px;
+  margin-top: 15px;
+}
+
+
+footer {
+  /* background-color: wheat; */
+    background-color: rgb(228, 196, 154);
+    text-align: center;
+    font-size: 1.6rem;
+    font-weight:500;
+    padding: 10px;
 }
