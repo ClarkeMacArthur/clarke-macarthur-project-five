@@ -18,7 +18,7 @@ class Playlist extends Component {
                     <li><p>Lenka - Everything At Once</p></li>
                     <li><p>Lenka - The Show</p></li>
                     <li><p>Sara Bareilles - Gavity</p></li>
-                    <li><p>Sara Bareille - King of Anything</p></li>
+                    <li><p>Sara Bareilles - King of Anything</p></li>
                 </ul>
                 </div>
                 

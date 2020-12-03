@@ -1,5 +1,5 @@
-import { Component } from 'react';
 // ********Import Packages*******
+import { Component } from 'react';
 import axios from 'axios';
 import Swal from 'sweetalert2';
 // ********Import CSS************
@@ -21,11 +21,16 @@ class App extends Component {
       isActive: true,
       nameValue: "",
       tapeName: "",
-      songList: []      
+      artistName: "",
+      songTitle: "",
+      songList: [],
+      artistList: [],    
+      songArray: [],
+      artistArray: []
     }
   }
 
-  
+  // Function to hide components on the page
 
   handleHide = () => {
     this.setState({
@@ -34,6 +39,7 @@ class App extends Component {
   };
 
 
+// Name Your Mix Event Handlers
 
   setNameValue = (e) => {
     // console.log(e.target.value)
@@ -46,6 +52,8 @@ class App extends Component {
     e.preventDefault();
 
     if (this.state.nameValue === "") {
+
+      // Error handling for no name entered
       Swal.fire({
         title: 'Missing info',
         text: 'Enter a name for your mix!',
@@ -54,12 +62,12 @@ class App extends Component {
       }); 
 
     } else {
-      
+      // Updates tapeName in State so it can be passed to Cassettes
       this.setState({
         tapeName: this.state.nameValue
       }, () => {
         this.setState({
-          nameValue: ''
+          nameValue: '',
         });
       });
 
@@ -67,6 +75,52 @@ class App extends Component {
     }
 
   }
+
+
+setArtistValue = (e) => {
+  this.setState({
+    artistName: e.target.value
+  })
+}
+
+setSongValue = (e) => {
+  this.setState({
+    songTitle: e.target.value
+  })
+}
+
+saveSongArtistValue = (e) => {
+  e.preventDefault();
+
+  axios({
+    url: `https://theaudiodb.com/api/v1/json/1/searchtrack.php`,
+    method: 'GET',
+    responseType: 'json',
+    params: {
+      s:this.state.artistName,
+      t:this.state.songTitle
+    }
+  }).then((results) => {
+    console.log(results);
+    const newSongArray = [...this.state.songList, results.data.track[0].strTrack]
+    // newSongArray.push(results.data.track[0].strTrack)
+
+    this.setState({
+      songArray: newSongArray
+    })
+
+    const newArtistArray = [...this.state.artistList, results.data.track[0].strTrack]
+    // newArtistArray.push(results.data.track[0].strArtist)
+    
+    this.setState({
+      artistArray: newArtistArray
+    })
+    // after push save new song array into state
+  });
+}
+
+
+
 
 
   render() {
@@ -90,7 +144,13 @@ class App extends Component {
 
             {this.state.bandNameCapture !== "" &&
               this.state.isActive === false && (
-                < SongSearch />
+                < SongSearch 
+                songArtist={this.state.artistName}
+                songValue={this.state.songTitle}
+                setArtistValue={this.setArtistValue}
+                setSongValue={this.setSongValue}
+                saveSongArtistValue={this.saveSongArtistValue}
+                />
               )}
           <div className="results">
             <p>Lisa Loeb - Stay</p>

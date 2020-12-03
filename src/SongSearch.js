@@ -1,15 +1,14 @@
-import { Component } from 'react';
 
 const SongSearch = (props) => {
 
-    const { songArtist, songValue, setSongValue, saveSongValue } = props
+    const { songArtist, songValue, setSongValue, setArtistValue, saveSongArtistValue } = props
 
     return (
         <div className="songFormContainer">
             <h2>Search for Songs!</h2>
 
             <form
-                onSubmit={saveSongValue}
+                onSubmit={saveSongArtistValue}
                 className="songForm"
                 action="submit"
                 id="songForm">
@@ -19,11 +18,18 @@ const SongSearch = (props) => {
                     <input
                         type="text"
                         id="searchSong"
-                        placeholder="Artist Name, Song Title"
-                        onChange={setSongValue}
-                        value={songArtist, songValue} />
+                        placeholder="Artist Name"
+                        onChange={setArtistValue}
+                        value={songArtist} />
 
                     <p>ex: Queen, Bohemian Rhapsody </p>
+
+                    <input
+                        type="text"
+                        id="searchSong"
+                        placeholder="Song Title"
+                        onChange={setSongValue}
+                        value={songValue} />
                 </div>
                 <div>
                     <button className="nameButton">Submit</button>
