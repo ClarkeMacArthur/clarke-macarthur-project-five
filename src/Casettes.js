@@ -47,7 +47,7 @@ class Cassettes extends Component {
                     alt: "a light coral pink audio cassette tape that has a light blue label. There is a white strip across the top to label the name of your tape. At the bottom in white text it reads:'super stereo, A, 90'"
                 }
             ],
-            mixName:"Awesome Mix Vol. 1",
+            // mixName:"Awesome Mix Vol. 1",
             // counter that increases/decreases with button click. Used to reference the images on the array
             count: 0,
         }
@@ -76,7 +76,7 @@ class Cassettes extends Component {
         
         return (
             <div className="cassette">
-                <p class="tapeName">{this.state.mixName}</p>
+                <p className="tapeName">{this.props.mixName}</p>
 
                 <img className="cassetteTape" src={this.state.tapeImages[this.state.count].src} alt={this.state.tapeImages[this.state.count].alt}/>
 

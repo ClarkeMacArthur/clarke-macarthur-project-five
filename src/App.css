@@ -121,12 +121,12 @@ h2  {
   margin-bottom: 40px;
 }
 
-.nameForm {
+.nameForm, .songForm {
   display: flex;
   justify-content: center;
 }
 
-.nameForm p{
+.nameForm p, .songForm p {
   text-align: center;
   margin-top: 8px;
   font-size: 1.6rem;
@@ -152,6 +152,8 @@ input {
   padding: 10px;
   border-bottom:3px solid tomato;
 }
+
+
 
 
 .trackCard {
