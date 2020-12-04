@@ -23,12 +23,12 @@ class App extends Component {
       tapeName: "",
       artistName: "",
       songTitle: "",
-      songList: [],
-      artistList: [],    
+      song: [],
+      artist: [],    
       songArray: [],
       artistArray: [],
       updatedSongArray: [],
-      updatedArtistArray: []
+      updatedArtistArray: [],      
     }
   }
 
@@ -104,28 +104,34 @@ saveSongArtistValue = (e) => {
     }
   }).then((results) => {
     console.log(results);
-    const newSongArray = [...this.state.songList, results.data.track[0].strTrack]
+    const newSongArray = [...this.state.songArray, results.data.track[0].strTrack]
+    
     // newSongArray.push(results.data.track[0].strTrack)
 
     this.setState({
-      songArray: newSongArray
+      songArray: newSongArray,
+      song:results.data.track[0].strTrack
     })
 
-    const newArtistArray = [...this.state.artistList, results.data.track[0].strArtist]
+    const newArtistArray = [...this.state.artistArray, results.data.track[0].strArtist]
     // newArtistArray.push(results.data.track[0].strArtist)
     
     this.setState({
-      artistArray: newArtistArray
+      artistArray: newArtistArray,
+      artist:results.data.track[0].strArtist
     })
     // after push save new song array into state
-
+    
     
   });
 }
 
+
+
 addToArray = (e) => {
   this.setState({
-    updatedArtistArray: this.state.artistArray
+    updatedArtistArray: [this.state.artistArray],
+    updatedSongArray: [this.state.songArray]
   })
 }
 
@@ -143,7 +149,10 @@ addToArray = (e) => {
             <div className="cassettePlaylist">
 
               < Cassettes mixName={this.state.tapeName} />
-              < Playlist />
+              < Playlist 
+              songTitles={this.state.updatedSongArray}
+              songArtists={this.state.updatedArtistArray}
+              />
             </div>
             {this.state.isActive === true && (
               <MixNameForm 
@@ -163,7 +172,7 @@ addToArray = (e) => {
                 />
               )}
           <div className="results">
-              <p>{this.state.artistArray} - {this.state.songArray}</p>
+              <p>{this.state.artist} - {this.state.song}</p>
             <button className="nameButton" onClick={this.addToArray} >Add to Mix</button>
           </div>
         </div>
