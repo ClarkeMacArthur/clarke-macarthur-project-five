@@ -26,7 +26,9 @@ class App extends Component {
       songList: [],
       artistList: [],    
       songArray: [],
-      artistArray: []
+      artistArray: [],
+      updatedSongArray: [],
+      updatedArtistArray: []
     }
   }
 
@@ -109,14 +111,22 @@ saveSongArtistValue = (e) => {
       songArray: newSongArray
     })
 
-    const newArtistArray = [...this.state.artistList, results.data.track[0].strTrack]
+    const newArtistArray = [...this.state.artistList, results.data.track[0].strArtist]
     // newArtistArray.push(results.data.track[0].strArtist)
     
     this.setState({
       artistArray: newArtistArray
     })
     // after push save new song array into state
+
+    
   });
+}
+
+addToArray = (e) => {
+  this.setState({
+    updatedArtistArray: this.state.artistArray
+  })
 }
 
 
@@ -153,8 +163,8 @@ saveSongArtistValue = (e) => {
                 />
               )}
           <div className="results">
-            <p>Lisa Loeb - Stay</p>
-            <button className="nameButton">Add to Mix</button>
+              <p>{this.state.artistArray} - {this.state.songArray}</p>
+            <button className="nameButton" onClick={this.addToArray} >Add to Mix</button>
           </div>
         </div>
         </main>

@@ -12,7 +12,7 @@ const SongSearch = (props) => {
                 className="songForm"
                 action="submit"
                 id="songForm">
-                <div className="nameContainer">
+                
                     <label htmlFor="searchSong" sr-only="Search for a song! Type artist and song title, separated by a comma"></label>
 
                     <input
@@ -22,15 +22,13 @@ const SongSearch = (props) => {
                         onChange={setArtistValue}
                         value={songArtist} />
 
-                    <p>ex: Queen, Bohemian Rhapsody </p>
-
                     <input
                         type="text"
                         id="searchSong"
                         placeholder="Song Title"
                         onChange={setSongValue}
                         value={songValue} />
-                </div>
+
                 <div>
                     <button className="nameButton">Submit</button>
                 </div>
