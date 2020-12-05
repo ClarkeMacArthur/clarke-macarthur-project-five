@@ -1,13 +1,13 @@
 
 
 const MixNameForm = (props) => {
-
+    // declare props
     const { nameValue, setNameValue, saveNameValue } = props
         
     return (
             <div className="nameFormContainer">
                 <h2>Name your mix!</h2>
-    
+                {/* form to select a name to be displayed on the Cassette */}
                 <form 
                 onSubmit={saveNameValue}
                 className="nameForm" 

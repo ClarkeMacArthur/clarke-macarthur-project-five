@@ -1,6 +1,7 @@
 import { Component } from 'react';
 
 class Footer extends Component {
+    // renders the footer to the page
     render () {
         return (
             <footer>

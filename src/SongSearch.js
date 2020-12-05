@@ -1,12 +1,12 @@
 
 const SongSearch = (props) => {
-
+    // declare props
     const { songArtist, songValue, setSongValue, setArtistValue, saveSongArtistValue } = props
 
     return (
         <div className="songFormContainer">
             <h2>Search for Songs!</h2>
-
+            {/* form to collect songTitle and artistName for the axios call to AudioDB API */}
             <form
                 onSubmit={saveSongArtistValue}
                 className="songForm"

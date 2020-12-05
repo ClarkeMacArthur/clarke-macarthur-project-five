@@ -71,18 +71,21 @@ class Cassettes extends Component {
             } 
         }
 
-    
+    // Renders Cassettes to the page
     render() {
         
         return (
             <div className="cassette">
+                {/* displays the mixName from data the user inputs on the NixNameForm */}
                 <p className="tapeName">{this.props.mixName}</p>
 
+                {/* image of cassette that changes once button is clicked */}
                 <img className="cassetteTape" src={this.state.tapeImages[this.state.count].src} alt={this.state.tapeImages[this.state.count].alt}/>
 
                 {/* button to cycle through different cassette images in the array */}
                 <div className="buttonFlex">
 
+                {/* Buttons that when clicked, advance or reverse the cassette images */}
                 <button className="tapeButton" onClick={this.prevCassette}><img src={leftArrow} alt="left pointing arrow, click to select the previous cassette"/></button>
 
                 <p>Choose Your Tape!</p>

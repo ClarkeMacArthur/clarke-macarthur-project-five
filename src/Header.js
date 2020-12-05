@@ -1,7 +1,9 @@
 import { Component } from 'react';
 import './App.css';
 
+
 class Header extends Component {
+    // renders header to the page 
     render() {
         return(
             <header>
