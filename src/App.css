@@ -8,20 +8,24 @@ html { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: 
 
 .sr-only { position: absolute; width: 1px; height: 1px; margin: -1px; border: 0; padding: 0; white-space: nowrap; clip-path: inset(100%); clip: rect(0 0 0 0); overflow: hidden;}
 
+/* Stripping padding and margin */
 * {
     padding: 0;
     margin: 0;
 }
 
+/* Make fontsizes a multiple of ten */
 html {
     font-size: 62.5%;
 }
+
 
 img {
     height:auto;
     display: block;
 }
 
+/* Wrapper to constrain content on large sceens */
 .wrapper {
     max-width: 1200px;
     width: 90%;
@@ -33,26 +37,24 @@ img {
 
 @import url('https://fonts.googleapis.com/css2?family=Major+Mono+Display&family=Montserrat:wght@400;500;600;700&family=Permanent+Marker&family=Roboto+Mono:wght@400;500;700&display=swap');
 
-
+/* header styles */
 
 header{
-  /* background-color: rgb(212, 192, 163); */
   background-color: rgb(228, 196, 154);
   min-height: 30vh;
   padding: 5% 0;
 }
-
-body {
-  background-color: blanchedalmond;
-  font-family: 'Montserrat', sans-serif;
-}
-
 
 h1 {
   font-family: 'Major Mono Display', monospace;
   font-size: 10rem;
   text-shadow: 2px 2px 2px #FF1A0E, 4px 4px 2px #E78C0D, 5px 5px 2px #E7C711, 8px 8px 2px #4DB913, 10px 10px 2px #0EC5DD, 14px 14px 2px #139DDD;
   text-align: center;
+}
+
+body {
+  background-color: blanchedalmond;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .playlist {
@@ -179,10 +181,6 @@ ul {
 }
 
 
-.songList2 {
-/* margin-left:-8%; */
-} 
-
 .songListContainer p {
   font-size: 1.6rem;
   line-height:1.5;
@@ -206,7 +204,6 @@ ul {
 
 
 footer {
-  /* background-color: wheat; */
     background-color: rgb(228, 196, 154);
     text-align: center;
     font-size: 1.6rem;
@@ -215,3 +212,108 @@ footer {
 }
 
 
+@media (max-width: 1150px) {
+
+  .songListContainer {
+    left: 90px;
+  }
+
+  .songListContainer p {
+    font-size: 1.4rem;
+  }
+
+}
+
+@media (max-width:950px) {
+
+  .cassettePlaylist {
+    flex-direction: column;
+  }
+
+  img {
+    width: 45%;
+  }
+
+
+  .playlist {
+    margin-top: 50px;
+  }
+
+  .songListContainer {
+    left: 29%;
+    top: 15%;
+    width: 45%;
+  }
+
+  .songListContainer p{
+    font-size: 1.3rem;
+  }
+
+  .trackCard {
+    height: 300px;
+  }
+}
+
+@media (max-width:750px) {
+
+  h1 {
+    font-size: 7rem;
+  }
+
+  .playlist{
+    width: 320px;;
+  }
+
+  .cassettePlaylist {
+    align-items: center;
+  }
+  .songListContainer {
+    width: 320px;
+    left:2px;
+  }
+
+.nameForm, .songForm {
+  flex-direction: column;
+  align-items: center;
+}
+
+.songForm input {
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.nameForm input {
+  text-align: center;
+}
+
+.nameForm button {
+  margin-top: 15px;
+}
+
+.results {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.results p {
+  margin-right:0;
+  margin-bottom: 15px;
+}
+
+}
+
+@media (max-width: 450px) {
+  h1 {
+    font-size: 5.5rem;
+  }
+
+  .results {
+    margin:50px 10px;
+  }
+
+  .results p {
+    font-size: 1.6rem;
+  }
+}
