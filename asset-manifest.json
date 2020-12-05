@@ -1,0 +1,34 @@
+{
+  "files": {
+    "main.css": "/clarke-macarthur-project-five/static/css/main.91cdbb4c.chunk.css",
+    "main.js": "/clarke-macarthur-project-five/static/js/main.49c5f530.chunk.js",
+    "main.js.map": "/clarke-macarthur-project-five/static/js/main.49c5f530.chunk.js.map",
+    "runtime-main.js": "/clarke-macarthur-project-five/static/js/runtime-main.4ab5ebd1.js",
+    "runtime-main.js.map": "/clarke-macarthur-project-five/static/js/runtime-main.4ab5ebd1.js.map",
+    "static/css/2.b4374897.chunk.css": "/clarke-macarthur-project-five/static/css/2.b4374897.chunk.css",
+    "static/js/2.ef1da8dd.chunk.js": "/clarke-macarthur-project-five/static/js/2.ef1da8dd.chunk.js",
+    "static/js/2.ef1da8dd.chunk.js.map": "/clarke-macarthur-project-five/static/js/2.ef1da8dd.chunk.js.map",
+    "static/js/3.08248348.chunk.js": "/clarke-macarthur-project-five/static/js/3.08248348.chunk.js",
+    "static/js/3.08248348.chunk.js.map": "/clarke-macarthur-project-five/static/js/3.08248348.chunk.js.map",
+    "index.html": "/clarke-macarthur-project-five/index.html",
+    "static/css/2.b4374897.chunk.css.map": "/clarke-macarthur-project-five/static/css/2.b4374897.chunk.css.map",
+    "static/css/main.91cdbb4c.chunk.css.map": "/clarke-macarthur-project-five/static/css/main.91cdbb4c.chunk.css.map",
+    "static/js/2.ef1da8dd.chunk.js.LICENSE.txt": "/clarke-macarthur-project-five/static/js/2.ef1da8dd.chunk.js.LICENSE.txt",
+    "static/media/jcard2.0cc03e28.jpg": "/clarke-macarthur-project-five/static/media/jcard2.0cc03e28.jpg",
+    "static/media/leftArrow.06b3d1d7.svg": "/clarke-macarthur-project-five/static/media/leftArrow.06b3d1d7.svg",
+    "static/media/rightArrow.4a4045b7.svg": "/clarke-macarthur-project-five/static/media/rightArrow.4a4045b7.svg",
+    "static/media/tape1.0166e222.svg": "/clarke-macarthur-project-five/static/media/tape1.0166e222.svg",
+    "static/media/tape2.df559ec7.svg": "/clarke-macarthur-project-five/static/media/tape2.df559ec7.svg",
+    "static/media/tape3.cedbe947.svg": "/clarke-macarthur-project-five/static/media/tape3.cedbe947.svg",
+    "static/media/tape4.2c9dee8f.svg": "/clarke-macarthur-project-five/static/media/tape4.2c9dee8f.svg",
+    "static/media/tape5.0f20fc87.svg": "/clarke-macarthur-project-five/static/media/tape5.0f20fc87.svg",
+    "static/media/tape6.63179cb3.svg": "/clarke-macarthur-project-five/static/media/tape6.63179cb3.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.4ab5ebd1.js",
+    "static/css/2.b4374897.chunk.css",
+    "static/js/2.ef1da8dd.chunk.js",
+    "static/css/main.91cdbb4c.chunk.css",
+    "static/js/main.49c5f530.chunk.js"
+  ]
+}
