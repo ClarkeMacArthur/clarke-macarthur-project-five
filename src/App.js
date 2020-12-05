@@ -23,12 +23,13 @@ class App extends Component {
       tapeName: "",
       artistName: "",
       songTitle: "",
-      song: [],
-      artist: [],    
+      song: "",
+      artist: "",    
       songArray: [],
       artistArray: [],
       updatedSongArray: [],
-      updatedArtistArray: [],      
+      updatedArtistArray: [],
+      count:0      
     }
   }
 
@@ -44,7 +45,6 @@ class App extends Component {
 // Name Your Mix Event Handlers
 
   setNameValue = (e) => {
-    // console.log(e.target.value)
     this.setState({
       nameValue: e.target.value
     })
@@ -107,32 +107,72 @@ saveSongArtistValue = (e) => {
     const newSongArray = [...this.state.songArray, results.data.track[0].strTrack]
     
     // newSongArray.push(results.data.track[0].strTrack)
-
+    
     this.setState({
       songArray: newSongArray,
-      song:results.data.track[0].strTrack
+      song:results.data.track[0].strTrack,
+      songTitle: ""
     })
-
+    console.log(this.state.songArray);
+    
     const newArtistArray = [...this.state.artistArray, results.data.track[0].strArtist]
     // newArtistArray.push(results.data.track[0].strArtist)
     
     this.setState({
       artistArray: newArtistArray,
-      artist:results.data.track[0].strArtist
+      artist:results.data.track[0].strArtist,
+      artistName: "",
     })
     // after push save new song array into state
     
+  }).catch(() =>{
     
-  });
+    Swal.fire({
+      title: "Oops! We couldn't find that song!",
+      text: "Please try again",
+      icon: "error",
+      confirmButtonText: "Got it!",
+    })
+
+  })
 }
 
 
-
+// button to update props array passed to Playlist.js
 addToArray = (e) => {
-  this.setState({
-    updatedArtistArray: [this.state.artistArray],
-    updatedSongArray: [this.state.songArray]
-  })
+  if (this.state.artist === "" || this.state.song === "") {
+    Swal.fire({
+      title: "Nothing to add to mix!",
+      text: "Please Search for a Song",
+      icon: "error",
+      confirmButtonText: "Got it!",
+    })
+  } else  if (this.state.count < 10) {
+    this.setState({
+      updatedArtistArray: this.state.artistArray,
+      updatedSongArray: this.state.songArray,
+      count: this.state.count + 1,
+      song: "",
+      artist: ""
+    })
+  } else {
+    Swal.fire({
+      title: "Your Mix is Finished!",
+      text: "Would you like to play again? Clicking yes will refresh the page and clear all inputs.",
+      icon: 'question',
+      showCancelButton: true,
+      confirmButtonText: 'Yes',
+    }).then((result) => {
+
+      // If no, close modal
+      if (result.isDenied) {
+
+        // If yes, then refresh page and clear inputs
+      } else if (result.isConfirmed) {
+        document.location.reload();
+      }
+    })
+  }
 }
 
 
@@ -149,6 +189,7 @@ addToArray = (e) => {
             <div className="cassettePlaylist">
 
               < Cassettes mixName={this.state.tapeName} />
+              
               < Playlist 
               songTitles={this.state.updatedSongArray}
               songArtists={this.state.updatedArtistArray}
@@ -161,8 +202,7 @@ addToArray = (e) => {
               saveNameValue={this.saveNameValue}/>
             )}
 
-            {this.state.bandNameCapture !== "" &&
-              this.state.isActive === false && (
+            {this.state.isActive === false && (
                 < SongSearch 
                 songArtist={this.state.artistName}
                 songValue={this.state.songTitle}

@@ -2,23 +2,28 @@ import {Component} from 'react';
 import jcard from './Assets/jcard2.jpg'
 
 class Playlist extends Component {
+    
     render() {
+        
+        // console.log(this.props.songArtists[0]);
         return(
             <div className="playlist">
                 <div className="songListContainer">
+
                 <ul className="songList1">
-                    <li><p>Lisa Loeb - Stay</p></li>
-                    <li><p>Queen - Bohemian Rhapsody</p></li>
-                    <li><p>Carly Rae Jepsen - Call Me Maybe </p></li>
-                    <li><p>Panic! At the Disco - I Write Sins not Tragedies</p></li>
-                    <li><p>City Girl - Ji-Eun's Sunset</p></li>
+                    
+                    <li><p>{this.props.songArtists[0]} - {this.props.songTitles[0]}</p></li>
+                    <li><p>{this.props.songArtists[1]} - {this.props.songTitles[1]}</p></li>
+                    <li><p>{this.props.songArtists[2]} - {this.props.songTitles[2]}</p></li>
+                    <li><p>{this.props.songArtists[3]} - {this.props.songTitles[3]}</p></li>
+                    <li><p>{this.props.songArtists[4]} - {this.props.songTitles[4]}</p></li>
                 </ul>
-                    <ul className="songList2">
-                    <li><p>Incubus - Stellar</p></li>
-                    <li><p>Lenka - Everything At Once</p></li>
-                    <li><p>Lenka - The Show</p></li>
-                    <li><p>Sara Bareilles - Gavity</p></li>
-                    <li><p>Sara Bareilles - King of Anything</p></li>
+                <ul className="songList2">
+                    <li><p>{this.props.songArtists[5]} - {this.props.songTitles[5]}</p></li>
+                    <li><p>{this.props.songArtists[6]} - {this.props.songTitles[6]}</p></li>
+                    <li><p>{this.props.songArtists[7]} - {this.props.songTitles[7]}</p></li>
+                    <li><p>{this.props.songArtists[8]} - {this.props.songTitles[8]}</p></li>
+                    <li><p>{this.props.songArtists[9]} - {this.props.songTitles[9]}</p></li>
                 </ul>
                 </div>
                 
