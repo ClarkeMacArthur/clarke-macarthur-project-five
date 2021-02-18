@@ -102,7 +102,7 @@ saveSongArtistValue = (e) => {
 
   // Axios call to AudioDB API
   axios({
-    url: `https://theaudiodb.com/api/v1/json/1/searchtrack.php`,
+    url: `https://theaudiodb.com/api/v1/json/523532/searchtrack.php`,
     method: 'GET',
     responseType: 'json',
     params: {
